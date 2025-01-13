@@ -23,4 +23,4 @@ aws lambda invoke --function-name integracao_dynamo --payload fileb://event.json
 
 # Registro incluído
 
-![DynamoDB com Registro](img/lambda_role_anexada.png)
+![DynamoDB com Registro](img/dynamoDB_registro_incluido.png)
