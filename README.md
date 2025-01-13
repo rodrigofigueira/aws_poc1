@@ -1,7 +1,7 @@
 
-# POC 1
+# Envio de Dados de uma Lambda para o DynamoDB usando Terraform
 
-Integração de Lambda com DynamoDB
+Este projeto é uma prova de conceito (PoC) que demonstra como configurar e implementar uma função AWS Lambda em Python para enviar dados para uma tabela do DynamoDB. Toda a infraestrutura necessária é provisionada utilizando o Terraform.
 
 ![Desenho](img/poc1.png)
 
