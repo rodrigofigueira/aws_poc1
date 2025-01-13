@@ -1,0 +1,4 @@
+{
+    "body": "{ \"eventId\": \"12345\", \"eventType\": \"USER_CREATED\", \"details\": \"User created successfully\" }"
+}
+  

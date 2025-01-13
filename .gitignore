@@ -31,6 +31,5 @@ website/vendor
 !command/test-fixtures/**/.terraform/
 
 node_modules/
-*.zip
 tfplan.out
 plan.tfout

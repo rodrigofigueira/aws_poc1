@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 resource "aws_dynamodb_table" "dynamo_table" {
-  name         = "MinhaTabela"
+  name         = "integracao_lambda"
   hash_key     = "Id"
   billing_mode = "PAY_PER_REQUEST"
 
@@ -52,4 +52,20 @@ resource "aws_iam_role_policy_attachment" "lambda_dynamodb_policy" {
 resource "aws_iam_role_policy_attachment" "lambda_cloudwatch_policy" {
   role       = aws_iam_role.lambda_role.name
   policy_arn = "arn:aws:iam::aws:policy/CloudWatchLogsFullAccess"
+}
+
+resource "aws_lambda_function" "my_lambda" {
+  function_name    = "integracao_dynamo"
+  filename         = "lambda_function.zip" 
+  handler          = "lambda_function.lambda_handler"
+  runtime          = "python3.13"
+  role             = aws_iam_role.lambda_role.arn
+  memory_size      = 128 
+  timeout          = 30
+
+  environment {
+    variables = {
+      DYNAMODB_TABLE = "integracao_lambda" 
+    }
+  }
 }
